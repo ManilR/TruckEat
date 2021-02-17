@@ -40,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         if(ContextCompat.checkSelfPermission(MainActivity.this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED){
+            startActivity(new Intent(MainActivity.this, MapsActivity.class));
             finish();
             return;
         }
@@ -52,8 +53,8 @@ public class MainActivity extends AppCompatActivity {
                         .withListener(new PermissionListener() {
                             @Override
                             public void onPermissionGranted(PermissionGrantedResponse permissionGrantedResponse) {
-
-
+                                startActivity(new Intent(MainActivity.this, MapsActivity.class));
+                                finish();
                             }
 
                             @Override
