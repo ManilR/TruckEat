@@ -3,9 +3,12 @@ package fr.iut.appmob.truckeat;
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 
+import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 import android.location.Location;
@@ -48,6 +51,14 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         }
 
         //check GPS enable or request to enable
+
+
+
+        //Afficher tous les marqueurs de trucks à partir de la BDD
+        LatLng rueil = new LatLng(48.87778, 2.1802832);
+        mMap.addMarker(new MarkerOptions().position(rueil).title("Marker in RURU"));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(rueil));
+
 
 
     }
