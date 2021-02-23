@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+//Activity to choose between Eater and Trucker mode
+
 public class IdActivity extends AppCompatActivity {
 
     @Override

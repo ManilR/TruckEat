@@ -30,6 +30,9 @@ import com.karumi.dexter.listener.single.PermissionListener;
 import java.security.Permissions;
 import java.security.acl.Permission;
 
+//Activity asking for user's permission and launching the application
+
+
 public class MainActivity extends AppCompatActivity {
 
     private Button btnGrant;
@@ -62,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
                                 if(permissionDeniedResponse.isPermanentlyDenied()){
                                     AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
                                     builder.setTitle("Permission Refusé")
-                                            .setMessage("La permission pour accéder à la localisation de votre appareil est refusée. Autorisez la persmission dans vos paramètres")
+                                            .setMessage("La permission pour accéder à la localisation de votre appareil est refusée. Autorisez la permission dans vos paramètres")
                                             .setNegativeButton("Cancel", null)
                                             .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                                                 @Override
