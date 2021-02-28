@@ -14,4 +14,13 @@
         android:text="@string/eater_connect"
         tools:layout_editor_absoluteX="135dp"
         tools:layout_editor_absoluteY="199dp" />
+
+    <Button
+        android:id="@+id/btnTrucker"
+        android:layout_width="170dp"
+        android:layout_height="49dp"
+        android:onClick="onClickBtnTrucker"
+        android:text="Je suis Trucker"
+        tools:layout_editor_absoluteX="138dp"
+        tools:layout_editor_absoluteY="267dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
