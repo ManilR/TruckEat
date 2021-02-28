@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "982385439874",
+    "project_id": "truckeat-88d1e",
+    "storage_bucket": "truckeat-88d1e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:982385439874:android:35b644e10d772723f5b09b",
+        "android_client_info": {
+          "package_name": "fr.iut.appmob.truckeat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "982385439874-858sqjl0hhophdnd0nuh5gv6ae1dg0vf.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "fr.iut.appmob.truckeat",
+            "certificate_hash": "096bad1828e9c09760a51cae31361c6dcb062bcc"
+          }
+        },
+        {
+          "client_id": "982385439874-huh3oaiglspipfvkufl3pjakhp2c980i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBWIi8VQ3Os9TSf5keTPaohdoOq-sIumjk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "982385439874-huh3oaiglspipfvkufl3pjakhp2c980i.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
