@@ -140,7 +140,9 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
 
     @Override
     public boolean onMarkerClick(Marker marker) {
-        return false;
+        Intent intent = new Intent(getApplicationContext(), PopUpActivity.class);
+        startActivity(intent);
+        return true;
     }
 
 
