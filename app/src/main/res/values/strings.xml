@@ -10,8 +10,8 @@
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="eater_connect">Je suis Eater</string>
-    <string name="connection_succeed" >Connexion réussie !</string>
-    <string name="error_authentication_canceled" >Erreur : Authentification annulée</string>
-    <string name="error_no_internet" >Erreur : Aucun accès internet</string>
-    <string name="error_unknown_error" >Erreur : Erreur inconnue</string>
+    <string name="connection_succeed">Connexion réussie !</string>
+    <string name="error_authentication_canceled">Erreur : Authentification annulée</string>
+    <string name="error_no_internet">Erreur : Aucun accès internet</string>
+    <string name="error_unknown_error">Erreur : Erreur inconnue</string>
 </resources>

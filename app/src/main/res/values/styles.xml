@@ -27,4 +27,9 @@
         <item name="android:windowDisablePreview">true</item>
     </style>
 
+    <style name="PopMe">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowCloseOnTouchOutside">true</item>
+    </style>
+
 </resources>
