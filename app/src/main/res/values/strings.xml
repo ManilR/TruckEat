@@ -14,4 +14,6 @@
     <string name="error_authentication_canceled">Erreur : Authentification annulée</string>
     <string name="error_no_internet">Erreur : Aucun accès internet</string>
     <string name="error_unknown_error">Erreur : Erreur inconnue</string>
+    <string name="PopButton">Voir le menu</string>
+    <string name="trucker_connect">Je suis Trucker</string>
 </resources>

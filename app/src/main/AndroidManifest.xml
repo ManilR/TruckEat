@@ -36,9 +36,10 @@
         android:theme="@style/Theme.TruckEat"
         tools:ignore="GoogleAppIndexingWarning"
         tools:replace="android:allowBackup">
-        <activity android:name=".PopUpActivity"
-            android:theme="@style/PopMe">
-        </activity>
+        <activity android:name=".MenuActivity"></activity>
+        <activity
+            android:name=".PopUpActivity"
+            android:theme="@style/PopMe"></activity>
         <activity android:name=".IdActivity" />
 
         <meta-data
@@ -58,8 +59,8 @@
             android:theme="@style/Theme.TruckEat.NoActionBar" />
         <activity
             android:name=".SplashActivity"
-            android:theme="@style/SplashScreenTheme"
-            android:parentActivityName=".MainActivity">
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/SplashScreenTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
