@@ -20,15 +20,16 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Permission démandé"
+            android:text="Permission démandée"
             android:textSize="24dp"
             android:layout_marginTop="16dp"
             android:fontFamily="sans-serif-condensed"
             android:textStyle="bold"></TextView>
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="32dp"
+            android:layout_width="366dp"
+            android:layout_height="42dp"
+            android:layout_centerInParent="true"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="24dp"
             android:text="Cette application a besoin de votre localisation pour fonctionner correctement. Merci de donner votre autorisation"
@@ -43,12 +44,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:background="@color/design_default_color_on_primary"
+        android:layout_marginBottom="75dp"
+        android:layout_centerInParent="true"
+        android:background="@drawable/bg_btn_primary"
+        android:text="Autoriser"
+        android:textAllCaps="false"
         android:textColor="#FFFFFF"
-        android:text="Permettre"
-        android:textAllCaps="false"></Button>
-
-
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"></Button>
 
 
 </RelativeLayout>

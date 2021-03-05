@@ -40,7 +40,8 @@
         <activity
             android:name=".PopUpActivity"
             android:theme="@style/PopMe"></activity>
-        <activity android:name=".IdActivity" />
+        <activity android:name=".IdActivity"
+            android:theme="@style/SplashScreenTheme"/>
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
@@ -69,8 +70,9 @@
         </activity>
         <activity
             android:name=".MainActivity"
-            android:label="Welcome"
-            android:parentActivityName=".MainActivity" />
+            android:label="Géolocalisation"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/Theme.TruckEat"/>
         <activity
             android:name="com.google.android.gms.common.api.GoogleApiActivity"
             android:exported="false"

@@ -24,12 +24,14 @@ public class SplashActivity extends AppCompatActivity {
         setContentView(R.layout.activity_splash_screen);
 
         handler = new Handler();
+        imageView = (ImageView)findViewById(R.id.imageRoue);
+        rotateAnimation();
         handler.postDelayed(new Runnable(){
+
             @Override
             public void run(){
                 Intent intent = new Intent(SplashActivity.this, MainActivity.class);
-                imageView = (ImageView)findViewById(R.id.imageRoue);
-                rotateAnimation();
+
 
                 startActivity(intent);
                 finish();
