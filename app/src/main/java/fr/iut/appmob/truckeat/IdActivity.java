@@ -18,7 +18,7 @@ import butterknife.BindView;
 
 //Activity to choose between Eater and Trucker mode
 
-public class IdActivity extends AppCompatActivity {
+public class IdActivity extends BaseActivity  {
 
     // Identifier for Sign-In Activity
     private static final int RC_SIGN_IN = 123;
@@ -27,7 +27,17 @@ public class IdActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_id);
+        if(this.isCurrentUserLogged()) {
+            this.startMapsActivity();
+        } else {
+            setContentView(R.layout.activity_id);
+        }
+
+    }
+
+    private void startMapsActivity(){
+        Intent intent = new Intent(this, MapsActivity.class);
+        startActivity(intent);
     }
 
     public void connectEater (View view){
@@ -51,35 +61,12 @@ public class IdActivity extends AppCompatActivity {
                 RC_SIGN_IN);
     }
 
-    // Show Snack Bar with a message
-    private void showSnackBar(CoordinatorLayout coordinatorLayout, String message){
-        Snackbar.make(findViewById(android.R.id.content), message, Snackbar.LENGTH_SHORT).show();
-    }
 
-    // Method that handles response after SignIn Activity close
-    private void handleResponseAfterSignIn(int requestCode, int resultCode, Intent data){
-
-        IdpResponse response = IdpResponse.fromResultIntent(data);
-
-        if (requestCode == RC_SIGN_IN) {
-            if (resultCode == RESULT_OK) { // SUCCESS
-                showSnackBar(this.coordinatorLayout, getString(R.string.connection_succeed));
-            } else { // ERRORS
-                if (response == null) {
-                    showSnackBar(this.coordinatorLayout, getString(R.string.error_authentication_canceled));
-                } else if (response.getError().getErrorCode() == ErrorCodes.NO_NETWORK) {
-                    showSnackBar(this.coordinatorLayout, getString(R.string.error_no_internet));
-                } else if (response.getError().getErrorCode() == ErrorCodes.UNKNOWN_ERROR) {
-                    showSnackBar(this.coordinatorLayout, getString(R.string.error_unknown_error));
-                }
-            }
-        }
-    }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        this.startMapsActivity();
         super.onActivityResult(requestCode, resultCode, data);
-        // Handle SignIn Activity response on activity result
-        this.handleResponseAfterSignIn(requestCode, resultCode, data);
+        finish();
     }
 }
