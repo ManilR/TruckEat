@@ -13,6 +13,8 @@
         android:layout_height="61dp"
         android:onClick="connectMenu"
         android:text="@string/PopButton"
+        android:textColor="@color/white"
+        android:background="@drawable/bg_btn_secondary"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

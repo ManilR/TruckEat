@@ -16,4 +16,8 @@
     <string name="error_unknown_error">Erreur : Erreur inconnue</string>
     <string name="PopButton">Voir le menu</string>
     <string name="trucker_connect">Je suis Trucker</string>
+    <string name="desc">Description</string>
+    <string name="ask_permission">Permission demandée</string>
+    <string name="permission_text">Cette application a besoin de votre localisation pour fonctionner correctement. Merci de donner votre autorisation</string>
+    <string name="authorize">Autoriser</string>
 </resources>
