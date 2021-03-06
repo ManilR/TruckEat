@@ -74,6 +74,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         Places.initialize(MapsActivity.this, "AIzaSyAdv4thLg44imAmLLDllQcK86weuiA_OU8");
         placesClient = Places.createClient(this);
         AutocompleteSessionToken token = AutocompleteSessionToken.newInstance();
+        this.userLocationFAB();
     }
 
     @SuppressLint("MissingPermission")
@@ -82,6 +83,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         mMap = googleMap;
         mMap.setMyLocationEnabled(true);
         mMap.getUiSettings().setMyLocationButtonEnabled(true);
+
 
         if(mapView != null && mapView.findViewById(Integer.parseInt("1"))!= null){
             View locationButton = ((View) mapView.findViewById(Integer.parseInt("1")).getParent()).findViewById((Integer.parseInt("2")));
@@ -127,15 +129,34 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
 
 
         //Afficher tous les marqueurs de trucks à partir de la BDD
+        this.placeMarkers();
         LatLng rueil = new LatLng(48.87778, 2.1802832);
         testMark = mMap.addMarker(new MarkerOptions().position(rueil).title("Marker in RURU"));
         testMark.setTag(0);
 
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(rueil));
 
         mMap.setOnMarkerClickListener(this);
 
 
+    }
+
+
+    private void placeMarkers(){
+
+    }
+
+
+    private void userLocationFAB(){
+        FloatingActionButton FAB = (FloatingActionButton) findViewById(R.id.myLocationButton);
+        FAB.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                if(mLastKnownLocation != null) { // Check to ensure coordinates aren't null, probably a better way of doing this...
+                    mMap.moveCamera(CameraUpdateFactory.newLatLng(new LatLng(mLastKnownLocation.getLatitude(), mLastKnownLocation.getLongitude())));
+                }
+            }
+        });
     }
 
     @Override
