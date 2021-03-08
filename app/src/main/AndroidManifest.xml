@@ -17,7 +17,7 @@
 
     <uses-permission android:name="com.example.barcodelibrary.permission.MAPS_RECEIVE" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission
@@ -37,12 +37,14 @@
         android:theme="@style/Theme.TruckEat"
         tools:ignore="GoogleAppIndexingWarning"
         tools:replace="android:allowBackup">
-        <activity android:name=".MenuActivity"></activity>
+        <activity android:name=".MainTrucker"></activity>
+        <activity android:name=".MenuActivity" />
         <activity
             android:name=".PopUpActivity"
-            android:theme="@style/PopMe"></activity>
-        <activity android:name=".IdActivity"
-            android:theme="@style/SplashScreenTheme"/>
+            android:theme="@style/PopMe" />
+        <activity
+            android:name=".IdActivity"
+            android:theme="@style/SplashScreenTheme" />
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
@@ -73,7 +75,7 @@
             android:name=".MainActivity"
             android:label="Géolocalisation"
             android:parentActivityName=".MainActivity"
-            android:theme="@style/Theme.TruckEat"/>
+            android:theme="@style/Theme.TruckEat" />
         <activity
             android:name="com.google.android.gms.common.api.GoogleApiActivity"
             android:exported="false"

@@ -28,7 +28,7 @@ public class IdActivity extends BaseActivity  {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if(this.isCurrentUserLogged()) {
-            this.startMapsActivity();
+            this.startTruckerMapsActivity();
         } else {
             setContentView(R.layout.activity_id);
         }
@@ -37,6 +37,11 @@ public class IdActivity extends BaseActivity  {
 
     private void startMapsActivity(){
         Intent intent = new Intent(this, MapsActivity.class);
+        startActivity(intent);
+    }
+
+    private void startTruckerMapsActivity(){
+        Intent intent = new Intent(this, MainTrucker.class);
         startActivity(intent);
     }
 
@@ -64,7 +69,7 @@ public class IdActivity extends BaseActivity  {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        this.startMapsActivity();
+        this.startTruckerMapsActivity();
         super.onActivityResult(requestCode, resultCode, data);
         finish();
     }
