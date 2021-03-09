@@ -142,7 +142,6 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
 
 
     private void placeMarkers(){
-       
     }
 
 
@@ -153,7 +152,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
             public void onClick(View v) {
 
                 if(mLastKnownLocation != null) { // Check to ensure coordinates aren't null, probably a better way of doing this...
-                    mMap.moveCamera(CameraUpdateFactory.newLatLng(new LatLng(mLastKnownLocation.getLatitude(), mLastKnownLocation.getLongitude())));
+                    mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(mLastKnownLocation.getLatitude(), mLastKnownLocation.getLongitude()), 18.0f));
                 }
             }
         });
