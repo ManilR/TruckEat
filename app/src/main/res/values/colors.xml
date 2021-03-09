@@ -9,4 +9,6 @@
     <color name="white">#FFFFFFFF</color>
     <color name="bg_grad_start">#EDA231</color>
     <color name="bg_grad_end">#F39E1E</color>
+    <color name="green">#19BC29</color>
+    <color name="text_login">#D9D9D9</color>
 </resources>

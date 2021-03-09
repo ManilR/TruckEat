@@ -21,4 +21,7 @@
     <string name="permission_text">Cette application a besoin de votre localisation pour fonctionner correctement. Merci de donner votre autorisation</string>
     <string name="authorize">Autoriser</string>
     <string name="map_connect">Afficher la carte</string>
+    <string name="mail">Adresse e-mail</string>
+    <string name="password">Mot de passe</string>
+    <string name="confirm">Confirmer</string>
 </resources>
