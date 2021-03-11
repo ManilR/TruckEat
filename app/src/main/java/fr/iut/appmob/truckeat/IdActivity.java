@@ -46,7 +46,8 @@ public class IdActivity extends BaseActivity  {
     }
 
     public void connectEater (View view){
-        this.startMapsActivity();
+        Intent intent = new Intent(this, MapsActivity.class);
+        startActivity(intent);
     }
 
     public void onClickBtnTrucker(View view){

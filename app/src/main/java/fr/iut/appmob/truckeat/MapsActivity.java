@@ -32,6 +32,9 @@ import com.google.android.libraries.places.api.net.PlacesClient;
 import com.google.android.libraries.places.widget.Autocomplete;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.GeoPoint;
+
 import android.location.Location;
 
 import androidx.annotation.NonNull;
@@ -44,6 +47,7 @@ import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
+import java.util.ArrayList;
 import java.util.Collections;
 
 public class MapsActivity extends AppCompatActivity implements OnMapReadyCallback, GoogleMap.OnMarkerClickListener {
@@ -54,7 +58,6 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
     private PlacesClient placesClient;
     private Location mLastKnownLocation;
     private LocationCallback locationCallback;
-
     private Marker testMark;
 
     private final float DEFAULT_ZOOM = 15;
@@ -129,10 +132,25 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
 
 
         //Afficher tous les marqueurs de trucks à partir de la BDD
-        this.placeMarkers();
-        LatLng rueil = new LatLng(48.87778, 2.1802832);
-        testMark = mMap.addMarker(new MarkerOptions().position(rueil).title("Marker in RURU"));
-        testMark.setTag(0);
+        Task<DocumentSnapshot> document;
+        document = TruckerHelper.getFoodTruck("MetaData");
+        while (!document.isComplete()){
+
+        }
+        Long nb = (Long) document.getResult().get("nb");
+        ArrayList<String> noms = (ArrayList<String>) document.getResult().get("names");
+        for (int i = 0; i<nb;i++){
+            Task<DocumentSnapshot> truck;
+            truck = TruckerHelper.getFoodTruck(noms.get(i));
+            while (!truck.isComplete()){
+
+            }
+            GeoPoint pos = (GeoPoint) truck.getResult().get("Geolocalisation");
+            LatLng LatLng = new LatLng(pos.getLatitude(), pos.getLongitude());
+            testMark = mMap.addMarker(new MarkerOptions().position(LatLng).title("Marker in RURU"));
+            testMark.setTag(noms.get(i));
+        }
+        ;
 
 
         mMap.setOnMarkerClickListener(this);
