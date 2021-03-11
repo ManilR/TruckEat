@@ -21,4 +21,8 @@ public class TruckerHelper {
         return TruckerHelper.getFoodTrucksCollection().document(uid).get();
     }
 
+    public static void addFoodTruck(FoodTruck trucker){
+        TruckerHelper.getFoodTrucksCollection().add(trucker);
+    }
+
 }
