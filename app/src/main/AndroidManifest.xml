@@ -37,7 +37,8 @@
         android:theme="@style/Theme.TruckEat"
         tools:ignore="GoogleAppIndexingWarning"
         tools:replace="android:allowBackup">
-        <activity android:name=".MainTrucker"></activity>
+        <activity android:name=".AddTruckActivity"></activity>
+        <activity android:name=".MainTrucker" />
         <activity android:name=".MenuActivity" />
         <activity
             android:name=".PopUpActivity"

@@ -24,4 +24,6 @@
     <string name="mail">Adresse e-mail</string>
     <string name="password">Mot de passe</string>
     <string name="confirm">Confirmer</string>
+    <string name="connectAdd">Ajouter un Truck</string>
+    <string name="connectDelete">Supprimer Truck</string>
 </resources>

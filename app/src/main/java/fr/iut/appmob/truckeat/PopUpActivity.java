@@ -12,6 +12,9 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.TextView;
 
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.firestore.DocumentSnapshot;
+
 public class PopUpActivity extends Activity {
 
     @Override
@@ -21,9 +24,15 @@ public class PopUpActivity extends Activity {
 
         Intent intent = getIntent();
         String truck = intent.getStringExtra(MapsActivity.EXTRA_MESSAGE);
+        Task<DocumentSnapshot> document;
+        document = TruckerHelper.getFoodTruck(truck);
+        while (!document.isComplete()){
+
+        }
+        String nom = (String) document.getResult().get("nom");
 
         TextView textView = findViewById(R.id.nomTruck);
-        textView.setText(truck);
+        textView.setText(nom);
 
         DisplayMetrics dm = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(dm);

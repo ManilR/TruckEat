@@ -144,17 +144,20 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
 
         }
         Long nb = (Long) document.getResult().get("nb");
-        ArrayList<String> noms = (ArrayList<String>) document.getResult().get("names");
+        ArrayList<String> ids = (ArrayList<String>) document.getResult().get("id");
         for (int i = 0; i<nb;i++){
             Task<DocumentSnapshot> truck;
-            truck = TruckerHelper.getFoodTruck(noms.get(i));
+            truck = TruckerHelper.getFoodTruck(ids.get(i));
             while (!truck.isComplete()){
 
             }
-            GeoPoint pos = (GeoPoint) truck.getResult().get("Geolocalisation");
-            LatLng LatLng = new LatLng(pos.getLatitude(), pos.getLongitude());
-            testMark = mMap.addMarker(new MarkerOptions().position(LatLng).title("Marker in RURU"));
-            testMark.setTag(noms.get(i));
+            GeoPoint pos = (GeoPoint) truck.getResult().get("geolocalisation");
+            if (pos != null){
+                LatLng LatLng = new LatLng(pos.getLatitude(), pos.getLongitude());
+                testMark = mMap.addMarker(new MarkerOptions().position(LatLng).title("Marker in RURU"));
+                testMark.setTag(ids.get(i));
+            }
+
         }
 
     }
