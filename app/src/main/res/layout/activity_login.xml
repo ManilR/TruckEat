@@ -28,10 +28,7 @@
             android:inputType="textEmailAddress"
             android:textColor="@color/text_login"
             android:textSize="25sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_ToEndOf="parent"
-            app:layout_constraintStart_ToStartOf="parent"
-            app:layout_constraintTop_ToTopOf="@+id/logo" />
+            android:textStyle="bold" />
 
         <EditText
             android:id="@+id/password"
@@ -44,10 +41,7 @@
             android:inputType="textPassword"
             android:textColor="@color/text_login"
             android:textSize="25sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_ToEndOf="parent"
-            app:layout_constraintStart_ToStartOf="parent"
-            app:layout_constraintTop_ToTopOf="@+id/email" />
+            android:textStyle="bold" />
 
 
     </LinearLayout>
