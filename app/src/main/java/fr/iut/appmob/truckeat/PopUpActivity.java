@@ -10,6 +10,7 @@ import android.view.Display;
 import android.view.Gravity;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.TextView;
 
 public class PopUpActivity extends Activity {
 
@@ -17,6 +18,12 @@ public class PopUpActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pop_up);
+
+        Intent intent = getIntent();
+        String truck = intent.getStringExtra(MapsActivity.EXTRA_MESSAGE);
+
+        TextView textView = findViewById(R.id.nomTruck);
+        textView.setText(truck);
 
         DisplayMetrics dm = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(dm);
@@ -35,7 +42,10 @@ public class PopUpActivity extends Activity {
     }
 
     public void connectMenu (View view){
-        Intent intent = new Intent(this, MenuActivity.class);
+        Intent intent = getIntent();
+        String truck = intent.getStringExtra(MapsActivity.EXTRA_MESSAGE);
+        intent = new Intent(this, MenuActivity.class);
+        intent.putExtra(MapsActivity.EXTRA_MESSAGE, truck);
         startActivity(intent);
     }
 }

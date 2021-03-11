@@ -35,11 +35,6 @@ public class IdActivity extends BaseActivity  {
 
     }
 
-    private void startMapsActivity(){
-        Intent intent = new Intent(this, MapsActivity.class);
-        startActivity(intent);
-    }
-
     private void startTruckerActivity(){
         Intent intent = new Intent(this, MainTrucker.class);
         startActivity(intent);

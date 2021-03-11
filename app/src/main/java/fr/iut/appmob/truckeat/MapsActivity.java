@@ -61,6 +61,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
     private Marker testMark;
 
     private final float DEFAULT_ZOOM = 15;
+    public static final String EXTRA_MESSAGE = "fr.iut.appmob.truckeat.MESSAGE";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -129,9 +130,14 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
             }
         });
 
+        this.placeMarkers();
+        mMap.setOnMarkerClickListener(this);
 
 
-        //Afficher tous les marqueurs de trucks à partir de la BDD
+    }
+
+    //Afficher tous les marqueurs de trucks à partir de la BDD
+    private void placeMarkers(){
         Task<DocumentSnapshot> document;
         document = TruckerHelper.getFoodTruck("MetaData");
         while (!document.isComplete()){
@@ -150,16 +156,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
             testMark = mMap.addMarker(new MarkerOptions().position(LatLng).title("Marker in RURU"));
             testMark.setTag(noms.get(i));
         }
-        ;
 
-
-        mMap.setOnMarkerClickListener(this);
-
-
-    }
-
-
-    private void placeMarkers(){
     }
 
 
@@ -178,7 +175,9 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
 
     @Override
     public boolean onMarkerClick(Marker marker) {
-        Intent intent = new Intent(getApplicationContext(), PopUpActivity.class);
+        Intent intent = new Intent(this, PopUpActivity.class);
+        String truck = (String) marker.getTag();
+        intent.putExtra(EXTRA_MESSAGE, truck );
         startActivity(intent);
         return true;
     }
