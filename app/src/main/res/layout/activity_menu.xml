@@ -7,21 +7,59 @@
     tools:context=".MenuActivity"
     tools:layout_editor_absoluteY="81dp" >
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="110dp"
+        android:gravity="center_horizontal"
+        android:background="@drawable/bg_header"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:background="@drawable/bg_header"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+        </View>
 
         <TextView
             android:id="@+id/nomTruck2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
             android:text="TextView" />
+
+        <TextView
+            android:id="@+id/adresseTruck"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:textSize="15sp"
+            android:layout_marginTop="30dp"
+            android:text="TextView"
+            app:layout_constraintTop_toBottomOf="@+id/nomTruck2"/>
+
 
         <TextView
             android:id="@+id/descriptionTruck"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="TextView" />
-    </LinearLayout>
+            android:layout_height="40dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginTop="60dp"
+            android:text="TextView"
+            android:textSize="15sp"
+            app:layout_constraintTop_toBottomOf="@+id/adresseTruck"/>
+
+    </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
