@@ -4,38 +4,48 @@ import com.google.firebase.firestore.GeoPoint;
 
 public class FoodTruck {
 
-    private String Adresse;
-    private String Nom;
-    private GeoPoint Geolocalisation;
+    private String adresse;
+    private String nom;
+    private String description;
+    private GeoPoint geolocalisation;
 
-    public FoodTruck(String adresse, String nom, GeoPoint geolocalisation) {
-        Adresse = adresse;
-        Nom = nom;
-        Geolocalisation = geolocalisation;
+    public FoodTruck(String adresse, String nom, String description, GeoPoint geolocalisation) {
+        this.adresse = adresse;
+        this.nom = nom;
+        this.description = description;
+        this.geolocalisation = geolocalisation;
     }
 
     public String getAdresse() {
-        return Adresse;
+        return adresse;
     }
 
     public void setAdresse(String adresse) {
-        Adresse = adresse;
+        this.adresse = adresse;
     }
 
     public String getNom() {
-        return Nom;
+        return nom;
     }
 
     public void setNom(String nom) {
-        Nom = nom;
+        this.nom = nom;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public GeoPoint getGeolocalisation() {
-        return Geolocalisation;
+        return geolocalisation;
     }
 
     public void setGeolocalisation(GeoPoint geolocalisation) {
-        Geolocalisation = geolocalisation;
+        this.geolocalisation = geolocalisation;
     }
 
 }

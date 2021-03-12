@@ -6,4 +6,49 @@
     android:layout_height="match_parent"
     tools:context=".AddTruckActivity">
 
+    <EditText
+        android:id="@+id/field_adresse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="@string/field_adresse"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="140dp" />
+
+    <EditText
+        android:id="@+id/field_nom"
+        android:layout_width="207dp"
+        android:layout_height="45dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="@string/field_nom"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="59dp" />
+
+    <Button
+        android:id="@+id/btnAjouterCarte"
+        android:layout_width="210dp"
+        android:layout_height="60dp"
+        android:onClick="onClickBtnAjouter"
+        android:text="@string/ajouterCarte"
+        tools:layout_editor_absoluteX="86dp"
+        tools:layout_editor_absoluteY="351dp" />
+
+    <EditText
+        android:id="@+id/field_mot"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="@string/mot_equipe"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.507"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.401" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

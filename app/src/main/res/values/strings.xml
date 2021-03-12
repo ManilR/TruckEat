@@ -26,4 +26,8 @@
     <string name="confirm">Confirmer</string>
     <string name="connectAdd">Ajouter un Truck</string>
     <string name="connectDelete">Supprimer Truck</string>
+    <string name="field_adresse">Adresse</string>
+    <string name="field_nom">Nom de l\'enseigne</string>
+    <string name="ajouterCarte">Ajouter la carte</string>
+    <string name="mot_equipe">Mot de l\'équipe</string>
 </resources>
