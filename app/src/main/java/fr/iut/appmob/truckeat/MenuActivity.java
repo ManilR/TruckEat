@@ -25,7 +25,10 @@ public class MenuActivity extends AppCompatActivity {
 
         }
         String nom = (String) document.getResult().get("nom");
+        String description = (String) document.getResult().get("description");
         TextView textView = findViewById(R.id.nomTruck2);
         textView.setText(nom);
+        textView = findViewById(R.id.descriptionTruck);
+        textView.setText(description);
     }
 }
