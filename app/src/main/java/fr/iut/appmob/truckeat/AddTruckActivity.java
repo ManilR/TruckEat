@@ -12,9 +12,8 @@ public class AddTruckActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_truck);
-        FoodTruck foodTruck = new FoodTruck("10 Avenue de l'Italie", "Papa's Freezeria", new GeoPoint(48.829893, 2.356274));
+        FoodTruck foodTruck = new FoodTruck("Quartier du Mont Valérien", "El Restorante", new GeoPoint(48.881707, 2.201134));
         TruckerHelper.addFoodTruck(foodTruck);
-        foodTruck = new FoodTruck("Boulevard du Maréchal Foch", "Super Bowls", new GeoPoint(48.87778, 2.1802832));
-        TruckerHelper.addFoodTruck(foodTruck);
+
     }
 }
